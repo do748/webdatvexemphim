@@ -1,0 +1,24 @@
+@use "../../assets//styles/mixins.scss" as *;
+
+.carousel_img {
+  min-height: 350px;
+  @include respond-to(xs) {
+    display: none;
+  }
+  .ant-carousel {
+    .slick-slide img {
+      display: block;
+      width: 80%;
+      height: 350px;
+      object-fit: cover;
+      margin: auto;
+      border-radius: 15px;
+    }
+    .slick-dots li button {
+      margin-top: 30px;
+      margin-right: 25px;
+      height: 5px;
+      background: #841f1f;
+    }
+  }
+}

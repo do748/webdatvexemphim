@@ -1,0 +1,175 @@
+@use "./../../assets/styles/cssBase.scss";
+@use "../../assets//styles/mixins.scss" as *;
+
+.navbar-toggler {
+  display: none; // Ẩn mặc định
+  @include respond-to(xs) {
+    display: block; // Chỉ hiển thị trên mobile
+    padding: 5px;
+    margin-right: 5px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #eee;
+  z-index: 999;
+  border-bottom: 1px solid #ccc;
+  background-color: #eee;
+  font-size: 1.6rem;
+
+  .nav-content {
+    position: relative;
+
+    .header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      min-height: 48px;
+
+      .header-left {
+        align-items: center;
+        flex: 1;
+
+        .header-logo {
+          display: inline-block;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .header-center {
+        position: relative;
+        flex: 5;
+        width: 100%;
+        .header__nav {
+          display: flex;
+          white-space: nowrap; /* Ngăn các mục xuống dòng */
+          justify-content: center;
+          margin-left: 90px;
+          align-items: center;
+          max-width: fit-content;
+          li {
+            a {
+              padding: 15px;
+              color: cssBase.$primary-color;
+              text-decoration: none;
+              display: block;
+              text-align: center;
+              font-size: 1.8rem;
+              &.active {
+                color: #9d3b0a; // Đổi màu chữ khi active
+              }
+            }
+            a:hover {
+              border-radius: 15px;
+              opacity: 0.9;
+              background: #ccc;
+              transition: 1s ease;
+            }
+
+            .input-search {
+              width: 280px;
+              height: 30px;
+              border-radius: 15px;
+              border: 1.8px solid #6c6969;
+            }
+            .input-search::placeholder {
+              padding-left: 10px;
+              font-family: "Poppins", sans-serif;
+              font-size: 1.6rem;
+            }
+          }
+        }
+        // Chọn Dropdow
+        ul li:first-child {
+          margin-right: 10px;
+        }
+        // Chọn Search
+        ul li:last-child {
+          margin-left: 10px;
+        }
+      }
+      .header-right {
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1;
+        .login-actions {
+          .user-info {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+              cursor: pointer;
+            }
+            .user-name {
+              max-width: 135px;
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.support__icon {
+  position: fixed;
+  bottom: 4px;
+  right: 10px;
+  z-index: 1000;
+  img {
+    width: 40px;
+    border-radius: 50%;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+.top__scroll {
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  z-index: 1000;
+
+  img {
+    width: 40px;
+    border-radius: 50%;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+.ant-dropdown {
+  position: fixed; // Đảm bảo không bị ảnh hưởng bởi scroll
+  z-index: 1050;
+}
+
+// REPONSIVE
+@include respond-to(xs) {
+  .header {
+    position: relative;
+    .search-wrapper {
+      position: absolute;
+      top: 15px;
+      right: 5px;
+    }
+    .header-left {
+      display: none;
+    }
+    .header-center {
+      display: none; // Ẩn menu khi chưa mở toggler
+    }
+    .header-right {
+      display: none;
+    }
+  }
+}
