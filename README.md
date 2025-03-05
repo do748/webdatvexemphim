@@ -78,7 +78,4 @@ npm test
 Kiểm thử Backend: Sử dụng JUnit trong môi trường phát triển.
 Kiểm thử API: Sử dụng Postman hoặc cURL để kiểm tra các endpoint.
 
-📬 Liên Hệ
-Nếu có bất kỳ vấn đề hoặc câu hỏi nào, vui lòng liên hệ qua:
-Email: mock2406@gmail.com
-GitHub: https://github.com/DUYLINH1402
+
