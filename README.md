@@ -51,22 +51,19 @@ Node.js (>= 14.0.0)
 Java (>= 11)
 MySQL (>= 8.0)
 
-Git
-Bước 1: Clone Repository
-git clone <https://github.com/DUYLINH1402/VTI-Cinemas-FE.git>
 
-Bước 2: Cài Đặt Frontend
+Bước 1: Cài Đặt Frontend
 npm install
 npm start
 
-Bước 3: Cài Đặt Backend
+Bước 2: Cài Đặt Backend
 Cài đặt các phụ thuộc bằng Maven:
 mvn install
 
 Chạy ứng dụng:
 mvn spring-boot:run
 
-Bước 4: Cấu Hình Database
+Bước 3: Cấu Hình Database
 Tạo một cơ sở dữ liệu MySQL:
 CREATE DATABASE vti_cinemas;
 Cập nhật file application.properties trong backend với thông tin kết nối.
